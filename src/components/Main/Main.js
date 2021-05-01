@@ -5,7 +5,7 @@ import { NewsCard } from "../NewsCard/NewsCard";
 import { LatestNews } from "../LatestNews/LatestNews";
 
 export const Main = () => {
-  const { allNews } = useSelector((state) => state.news);
+  const { filteredNews } = useSelector((state) => state.news);
 
   return (
     <>
@@ -16,8 +16,8 @@ export const Main = () => {
           <LatestNews />
         </div>
 
-        {Object.keys(allNews).map((item) => {
-          return <NewsCard key={item} newsList={allNews[item]}></NewsCard>;
+        {Object.keys(filteredNews).map((item) => {
+          return <NewsCard key={item} newsList={filteredNews[item]}></NewsCard>;
         })}
       </div>
     </>
