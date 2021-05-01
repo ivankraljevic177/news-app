@@ -1,10 +1,12 @@
-import React from 'react'
-import styles from './Header.module.scss';
+import React from "react";
+import styles from "./Header.module.scss";
+import { Search } from "../Search/Search";
 
 export const Header = () => {
-    return (
-        <header className={styles.container}>
-            <h2>MyNews</h2>
-        </header>
-    )
-}
+  return (
+    <header className={styles.container}>
+      <div>MyNews</div>
+      <div><Search></Search></div>
+    </header>
+  );
+};

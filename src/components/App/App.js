@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import  styles from "./App.module.scss";
-import {  useDispatch } from "react-redux";
+import styles from "./App.module.scss";
+import { useDispatch } from "react-redux";
 import { setAllNews } from "../../redux/actions";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import {Main} from '../Main/Main';
-import {Header} from '../Header/Header'
+import { Main } from "../Main/Main";
+import { Header } from "../Header/Header";
 import { Sidebar } from "../Sidebar/Sidebar";
 
 function App() {
@@ -23,15 +23,15 @@ function App() {
         .then((res) => res.json())
         .then((result) => {
           setIsLoaded(true);
-          dispatch(setAllNews(result.articles))
+          dispatch(setAllNews(result.articles));
         })
-        .catch(err => {
+        .catch((err) => {
           setIsLoaded(true);
-          setError(err);
-          console.log(err);
+          setError(err.message);
+          console.log(err.message);
         });
     })();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) {
@@ -44,12 +44,15 @@ function App() {
   return (
     <div className={styles.container}>
       <Router>
-        <div className={styles.header}><Header></Header></div>
-        <div><Sidebar></Sidebar></div>
-        <div className={styles.main}><Route exact path="/" component={Main} /></div>
-        
-        
-      
+        <div className={styles.header}>
+          <Header></Header>
+        </div>
+        <div className={styles.sidebar}>
+          <Sidebar></Sidebar>
+        </div>
+        <div className={styles.main}>
+          <Route exact path="/" component={Main} />
+        </div>
       </Router>
     </div>
   );

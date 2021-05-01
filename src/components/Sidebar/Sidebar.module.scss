@@ -1,0 +1,27 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+        height: 63px;
+        width: 63px;
+        border: none;
+        color: #1D1D1B;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+}
+.svg{
+    opacity: 0.5;
+}
+.activebtn{
+        background-color: #e7e7e7;
+        background-color: #FFFFFF;
+        box-shadow: 0 1px 2px -1px #C8CAD1;
+        .svg{
+            opacity: 1;
+        }
+}

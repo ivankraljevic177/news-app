@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>530476C8-41E4-48DE-9468-1BC8B4743B7E</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.117647 0 0 0 0 0.443137 0 0 0 0 0.733333 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-963.000000, -257.000000)" id="Group-3">
+            <g transform="translate(948.000000, 238.000000)">
+                <g id="Icons-/-Navigation-/-Top-lists-Copy" transform="translate(15.000000, 18.000000)" filter="url(#filter-1)">
+                    <g transform="translate(0.000000, 1.000000)" id="Latest" fill="#BB1E1E">
+                        <circle id="Oval" opacity="0.239999995" cx="10" cy="10" r="10"></circle>
+                        <circle id="Oval" cx="10" cy="10" r="5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
