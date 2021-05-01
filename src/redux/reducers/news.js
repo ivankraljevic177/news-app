@@ -11,8 +11,8 @@ const initialState = {
 function setAllNews(state, action) {
   return {
     ...state,
-    allNews: [...state.allNews, action.payload],
-    filteredNews: [...state.allNews, action.payload]
+    allNews: [...action.payload],
+    filteredNews: [...action.payload]
   };
 }
 

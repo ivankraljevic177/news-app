@@ -1,0 +1,9 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(321px, 1fr));    
+    gap: 1em;
+}
+.sidebar{
+    grid-column: 3 / 4;
+    grid-row: 1/3;
+}
