@@ -9,7 +9,7 @@ export const Main = () => {
 
   return (
     <>
-      <div>News</div>
+      <div className={styles.mainHeading}>News</div>
 
       <div className={styles.container}>
         <div className={styles.latestnews}>

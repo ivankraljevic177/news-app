@@ -9,11 +9,11 @@ export const Sidebar = () => {
     <div className={styles.sidebar}>
       <NavLink activeClassName={styles.activebtn} exact to="/">
         <img className={styles.svg} src={HomeSvg} alt="home"></img>
-        <div>Home</div>
+        <div className={styles.text}>Home</div>
       </NavLink>
       <NavLink activeClassName={styles.activebtn} exact to="/abc">
         <img className={styles.svg} src={GeneralSvg} alt="home"></img>
-        <div>General</div>
+        <div className={styles.text}>General</div>
       </NavLink>
     </div>
   );

@@ -7,7 +7,7 @@ export const NewsCard = (props) => {
       <div className={styles.card}>
         <img
           src={props.newsList.urlToImage}
-          alt="news"
+          alt="News"
           className={styles.img}
         ></img>
         <p>{props.newsList.title}</p>

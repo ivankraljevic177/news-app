@@ -17,7 +17,7 @@ function App() {
     const headers = { "X-Api-Key": process.env.REACT_APP_X_API_KEY };
 
     (async function () {
-      await fetch("https://newsapi.org/v2/top-headlines?country=us", {
+      await fetch("https://newsapi.org/v2/top-headlines?country=gb", {
         headers,
       })
         .then((res) => res.json())
