@@ -1,20 +1,19 @@
-.container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(321px, 1fr));
-    grid-auto-rows: 252px;    
-    gap: 1em;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(321px, 1fr));
+  grid-auto-rows: 252px;
+  gap: 1em;
 }
-.latestnews{
-    grid-column: 3 / 4;
-    grid-row: 1/3;
-    overflow:auto;
-    background-color: white;
-    border-radius: 8px;
-
+.latestnews {
+  grid-column: 3 / 4;
+  grid-row: 1/3;
+  overflow-y: scroll;
+  background-color: white;
+  border-radius: 8px;
 }
-.mainHeading{
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "Arial";
-    margin-bottom: 4px;
+.mainHeading {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Arial";
+  margin-bottom: 4px;
 }

@@ -1,36 +1,9 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 import styles from "./LatestNews.module.scss";
-import { useSelector } from "react-redux";
 import LatestSvg from "../../assets/Latest.svg";
 
-export const LatestNews = () => {
-  const { allNews } = useSelector((state) => state.news);
-  const [listItems, setListItems] = useState(allNews.slice(0,10));
-  const [isFetching, setIsFetching] = useState(false);
-  console.log(listItems)
+export const LatestNews = ({listItems, isFetching}) => {
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (!isFetching) return;
-    fetchMoreListItems();
-  }, [isFetching]);
-
-    function handleScroll() {
-        if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
-        setIsFetching(true);
-      }
-
-      function fetchMoreListItems() {
-        setTimeout(() => {
-        setListItems(allNews);
-
-          setIsFetching(false);
-        }, 2000);
-      }
   return (
     <div className={styles.latestnews}>
       <h3 className={styles.heading}>
@@ -47,7 +20,7 @@ export const LatestNews = () => {
         );
       })}
       </ul>
-      {isFetching && 'Fetching more list items...'}
+      {!isFetching && 'Fetching more list items...'}
     </div>
   );
 };
