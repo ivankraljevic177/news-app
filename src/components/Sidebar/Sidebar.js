@@ -11,9 +11,21 @@ export const Sidebar = () => {
         <img className={styles.svg} src={HomeSvg} alt="home"></img>
         <div className={styles.text}>Home</div>
       </NavLink>
-      <NavLink activeClassName={styles.activebtn} exact to="/abc">
+      <NavLink activeClassName={styles.activebtn} to={`/general`}>
         <img className={styles.svg} src={GeneralSvg} alt="home"></img>
         <div className={styles.text}>General</div>
+      </NavLink>
+      <NavLink activeClassName={styles.activebtn} to={`/sports`}>
+        <img className={styles.svg} src={GeneralSvg} alt="home"></img>
+        <div className={styles.text}>Sports</div>
+      </NavLink>
+      <NavLink activeClassName={styles.activebtn} to={`/health`}>
+        <img className={styles.svg} src={GeneralSvg} alt="home"></img>
+        <div className={styles.text}>Health</div>
+      </NavLink>
+      <NavLink activeClassName={styles.activebtn} to={`/science`}>
+        <img className={styles.svg} src={GeneralSvg} alt="home"></img>
+        <div className={styles.text}>Science</div>
       </NavLink>
     </div>
   );

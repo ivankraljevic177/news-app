@@ -10,23 +10,20 @@ export const Main = () => {
   const [listItems, setListItems] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
-
   useEffect(() => {
     setListItems(allNews.slice(0, 10));
-  }, [allNews])
+  }, [allNews]);
 
   const handleScroll = (e) => {
-
-
-    const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
-    if (bottom && !isFetching) { 
-      
+    const bottom =
+      e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    if (bottom && !isFetching) {
       setTimeout(() => {
         setListItems(allNews);
-        setIsFetching(true)
-        }, 1000);
+        setIsFetching(true);
+      }, 1000);
     }
- }
+  };
 
   return (
     <>

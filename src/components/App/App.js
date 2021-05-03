@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Main } from "../Main/Main";
 import { Header } from "../Header/Header";
 import { Sidebar } from "../Sidebar/Sidebar";
+import { Category } from "../Category/Category";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function App() {
     const headers = { "X-Api-Key": process.env.REACT_APP_X_API_KEY };
 
     (async function () {
-      await fetch("https://newsapi.org/v2/top-headlines?country=gb", {
+      await fetch("https://newsapi.org/v2/top-headlines?country=us", {
         headers,
       })
         .then((res) => res.json())
@@ -52,6 +53,7 @@ function App() {
         </div>
         <div className={styles.main}>
           <Route exact path="/" component={Main} />
+          <Route path="/:category" component={Category} />
         </div>
       </Router>
     </div>
