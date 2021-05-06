@@ -9,9 +9,22 @@ import { LatestNews } from "../LatestNews/LatestNews";
 export const Category = (props) => {
   const dispatch = useDispatch();
 
+  const [isFeaturedClicked, setIsFeaturedClicked] = useState(true);
+  const [isLatestClicked, setIsLatestClicked] = useState(false);
   const { allNews } = useSelector((state) => state.news);
   const [listItems, setListItems] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
+
+  const handleFeatureClick = () => {
+    setIsFeaturedClicked(true);
+    setIsLatestClicked(false);
+  };
+
+  const handleLatestClicked = () => {
+    setIsLatestClicked(true);
+    setIsFeaturedClicked(false);
+  };
+
   useEffect(() => {
     if (!isFetching) {
       setListItems(allNews.slice(0, 10));
@@ -52,16 +65,44 @@ export const Category = (props) => {
   }, [props.match.params.category]);
   return (
     <>
+      <div className={styles.buttons}>
+        <button
+          onClick={handleFeatureClick}
+          className={isFeaturedClicked ? styles.isClicked : ""}
+        >
+          Featured
+        </button>
+        <button
+          onClick={handleLatestClicked}
+          className={isLatestClicked ? styles.isClicked : ""}
+        >
+          Latest
+        </button>
+      </div>
       <div className={styles.mainHeading}>News</div>
       <div className={styles.container}>
-        <div onScroll={handleScroll} className={styles.latestnews}>
+        <div
+          onScroll={handleScroll}
+          className={isLatestClicked ? styles.latestnews : styles.hideLatest}
+        >
           <LatestNews listItems={listItems} isFetching={isFetching} />
         </div>
 
         {error && <div>{error}</div>}
         {!isLoaded && <div>Loading...</div>}
+        {isFeaturedClicked}
+
         {Object.keys(filteredNews).map((item) => {
-          return <NewsCard key={item} newsList={filteredNews[item]}></NewsCard>;
+          return (
+            <div
+              className={
+                isFeaturedClicked ? styles.featured : styles.hideFeatured
+              }
+              key={item}
+            >
+              <NewsCard newsList={filteredNews[item]}></NewsCard>
+            </div>
+          );
         })}
       </div>
     </>

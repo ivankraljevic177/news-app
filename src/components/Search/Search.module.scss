@@ -1,3 +1,8 @@
+@import '../../style/buttons';
+@import '../../style/variables';
+@import "../../style/breakpointmixin";
+@import "../../style/fontsizemixin";
+
 .search {
   display: flex;
   height: 50px;
@@ -6,25 +11,23 @@
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-  button {
-    margin: 8px;
-    height: 40px;
-    width: 95px;
-    border-radius: 6px;
-    background-color: #bb1e1e;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    font-family: "Arial";
-    border: none;
-  }
+  
 }
 .searchInput {
   flex-grow: 2;
   border: none;
-  font-size: 16px;
+  @include font-source-sans(16px);
   outline: none;
 }
 .searchSvg {
   margin: 8px;
+}
+
+@include respond-to(medium) {
+
+  .search{
+    height: 48px;
+    width: 321px;
+  }
+  
 }

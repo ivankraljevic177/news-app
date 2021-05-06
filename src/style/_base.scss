@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color: $primary-background-color;
+    font-family: $font-stack;
+    line-height: 1.1;
+}

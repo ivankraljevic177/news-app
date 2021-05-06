@@ -1,19 +1,19 @@
+@import '../../style/buttons';
+@import '../../style/variables';
+@import "../../style/breakpointmixin";
+@import "../../style/fontsizemixin";
+
 .sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
   a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    @extend %btn;
     height: 63px;
     width: 63px;
-    border: none;
-    color: #1d1d1b;
+    @include font-source-sans(14px, $primary-text-color);
     text-decoration: none;
-    font-size: 14px;
-    border-radius: 5px;
+    margin:0;
   }
   .svg {
 
@@ -26,9 +26,8 @@
 }
 
 .activebtn {
-  background-color: #e7e7e7;
-  background-color: #ffffff;
-  box-shadow: 0 1px 2px -1px #c8cad1;
+  background-color: $secondary-text-color;
+  box-shadow:$box-shadow-button;
   .svg {
     opacity: 1;
   }
@@ -36,3 +35,21 @@
     opacity: 1;
   }
 }
+
+@include respond-to(medium) {
+
+  .sidebar{
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-content: center;
+    a{
+      height: 95px;
+      width: 95px;
+      @include font-source-sans(16px, $primary-text-color);
+    }
+  }
+  
+}
+

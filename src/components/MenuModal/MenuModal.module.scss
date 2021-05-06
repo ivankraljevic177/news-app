@@ -1,0 +1,38 @@
+@import "../../style/variables";
+@import "../../style/breakpointmixin";
+@import "../../style/fontsizemixin";
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: $primary-background-color;
+  .modalContent {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    grid-auto-rows: 100px;
+  }
+  .closeBtn {
+    height: 25px;
+    width: 25px;
+    grid-column: 4 / 5;
+    grid-row: 1/2;
+    align-self: center;
+  }
+  .sidebar{
+    grid-column: 1 / 5;
+    grid-row: 3/6;
+  }
+  .heading{
+    @include font-source-sans(32px, $primary-text-color, 900, 39px);
+    letter-spacing: 0;
+    grid-column: 2 / 4;
+    grid-row: 2/3;
+  }
+}

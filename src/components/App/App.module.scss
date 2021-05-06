@@ -1,40 +1,50 @@
 /* Works on Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,0.24) white;
-  }
-  
-  /* Works on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 4px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: white;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color:rgba(0,0,0,0.24);
-    border-radius: 20px;
-    border: 3px solid rgba(0,0,0,0.24) white;
-  }
-body{
-    background-color: #F4F5F8;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.24) white;
 }
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.24) white;
+}
+
+@import "../../style/variables";
+@import "../../style/breakpointmixin";
 
 .container {
-    position: relative;
-    display: grid;
-    width: 100%;
-    max-width: 1100px;
-    min-width: 320px;  
-    margin: 0 auto;
-    grid-template-columns: repeat(12, 1fr);
-  }
-
-.header{
-    grid-column: 1/13;
+  position: relative;
+  display: grid;
+  max-width: 1100px;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
 }
-.main{
-    grid-column: 2/13;
+
+.header {
+  grid-column: 1/13;
+}
+.main {
+  grid-column: 2/13;
+}
+
+@include respond-to(medium) {
+  .main {
+    grid-column: 2/12;
+    justify-self: center;
+    margin: 5px;
+  }
+  .sidebar {
+    display: none;
+  }
 }

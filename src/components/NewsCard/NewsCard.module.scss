@@ -1,13 +1,13 @@
+@import '../../style/buttons';
+@import '../../style/variables';
 
 .card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    height: 252px;
-    width: 321px;
+
     text-align: center;
     font-family: arial;
     border-radius: 8px;
-    background-color: #FFFFFF;
-    box-shadow: 0 1px 2px -1px #C8CAD1;
+    background-color: $secondary-text-color;
+    box-shadow: $box-shadow-button;
 }
 .img{
     border-top-left-radius: 8px;

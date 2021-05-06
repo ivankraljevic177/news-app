@@ -1,12 +1,43 @@
+@import "../../style/variables";
+@import "../../style/breakpointmixin";
+@import "../../style/fontsizemixin";
+
 .container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  @include font-source-sans(32px,$primary-text-color,700,1.2);
+  border-bottom: $border-line;
+  margin-bottom: 1rem;
+
+  .search {
+    grid-column: 3 / 10;
+  }
+
+  .logo {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-    line-height: 1.2;
-    font-size: 32px;
-    font-weight: 700;
-    border-bottom: 1px solid rgba(151,151,151,0.2);
-    margin-bottom: 2rem;
+    justify-content: space-between;
+  }
+}
+
+@include respond-to(medium) {
+  .container {
+    border-bottom: 0;
+    margin-bottom: 0;
+    .search {
+      justify-self: center;
+      grid-column: 1 / 13;
+      grid-row: 2/3;
+    }
+    .logo {
+      margin: 5px;
+      grid-column: 1 / 13;
+    }
+    .svgDiv {
+      height: 25px;
+      width: 25px;
+    }
+  }
 }

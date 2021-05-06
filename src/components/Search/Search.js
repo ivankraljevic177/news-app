@@ -10,9 +10,6 @@ export const Search = () => {
   const handleChange = (event) => {
     dispatch(filterNews(event.target.value));
   };
-  const onSubmit = (event) => {
-    dispatch(filterNews(event.target.value));
-  };
   return (
     <div className={styles.search}>
       <img className={styles.searchSvg} src={SearchSvg} alt="searchicon"></img>
@@ -22,7 +19,6 @@ export const Search = () => {
         className={styles.searchInput}
         placeholder="Search news"
       ></input>
-      <button onSubmit={onSubmit}>SEARCH</button>
     </div>
   );
 };

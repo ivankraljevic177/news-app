@@ -1,7 +1,11 @@
+@import "../../style/variables";
+@import "../../style/breakpointmixin";
+@import "../../style/fontsizemixin";
+
 .latestnews {
   padding: 10px;
   margin-left: 10px;
-  ul{
+  ul {
     list-style-type: none;
     padding-left: 0px;
   }
@@ -9,20 +13,16 @@
 .items {
   margin-top: 15px;
   border-top: 1px solid #f4f5f8;
-  div{
+  div {
     height: 16px;
     width: 134px;
-    color: #1E71BB;
-    font-size: 10px;
-    font-weight: bold;
+    @include font-source-sans(10px, $blue, bold, 16px);
     letter-spacing: -0.02px;
-    line-height: 16px;
   }
 }
-.heading{
+.heading {
   display: flex;
-  div{
+  div {
     margin-left: 5px;
-    
   }
 }
