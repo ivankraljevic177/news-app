@@ -49,6 +49,7 @@
   .buttons {
     display: flex;
     justify-content: center;
+    
     button {
       border-radius: 6px;
       border: none;
@@ -57,6 +58,7 @@
       width: 102px;
       color: #1d1d1b;
       background: none;
+      @include font-source-sans(16px, $primary-text-color, 600,20px);
     }
     .isClicked {
       height: 40px;

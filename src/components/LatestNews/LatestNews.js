@@ -19,7 +19,7 @@ export const LatestNews = ({ listItems, isFetching }) => {
           );
         })}
       </ul>
-      {!isFetching && "Fetching more news..."}
+      {!isFetching && <div className={styles.loading}>Fetching more news...</div>}
     </div>
   );
 };

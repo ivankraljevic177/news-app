@@ -8,7 +8,7 @@
   align-items: center;
   padding-bottom: 2rem;
   padding-top: 2rem;
-  @include font-source-sans(32px,$primary-text-color,700,1.2);
+  @include font-source-sans(24px,$primary-text-color,900,29px);
   border-bottom: $border-line;
   margin-bottom: 1rem;
 
@@ -30,6 +30,7 @@
       justify-self: center;
       grid-column: 1 / 13;
       grid-row: 2/3;
+      margin-top: 15px;
     }
     .logo {
       margin: 5px;
