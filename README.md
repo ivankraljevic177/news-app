@@ -23,8 +23,11 @@ Save the file.
 ### Installation
   
  `git clone https://github.com/ivankraljevic177/news-app.git`
+ 
  `npm install`
+ 
  `npm start`
+ 
  `visit http://localhost:3000`
 
 ## Style 
